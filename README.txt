@@ -1,6 +1,5 @@
 This supplementary material contains the following files:
 - README.txt: this file
-- ICCV2025_7082_OccluGaussian_Supp_Material.pdf: more detailed information about the data and the methods used in the paper, and additional results
 - OccluGaussian_gallery.mp4: a video showing qualitative result of our method in gallery scene
 - OccluGaussian_canteen.mp4: a video showing qualitative result of our method in canteen scene
 - OccluGaussian_classbuilding.mp4: a video showing qualitative result of our method in classbuilding scene
