@@ -1,10 +1,6 @@
 This supplementary material contains the following files:
 - README.txt: this file
-- OccluGaussian_gallery.mp4: a video showing qualitative result of our method in gallery scene
-- OccluGaussian_canteen.mp4: a video showing qualitative result of our method in canteen scene
-- OccluGaussian_classbuilding.mp4: a video showing qualitative result of our method in classbuilding scene
 - videos: a folder containing visual comparisons of our method
-- web_viewer: a folder containing a web viewer to visualize and compare the results of our method and the baseline methods
 
 We strongly recommend using the web viewer to visualize and compare the results. 
 To use the web viewer, open the index.html file in a web browser. 
