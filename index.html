@@ -70,6 +70,19 @@
           const tabsWidget = new TabsWidget(containerElement);
       });
     }
+
+    window.onload = function () {
+            setTimeout(function () {
+                // const ul = document.getElementById('myList');
+                const uls = document.querySelectorAll('ul');
+                uls.forEach(ul => {
+                  const firstItem = ul.firstElementChild;
+                    if (firstItem) {
+                        firstItem.click();
+                    }
+                });
+            }, 2000);
+        };
   </script>
 </head>
 
