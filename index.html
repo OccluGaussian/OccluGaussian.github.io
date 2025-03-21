@@ -37,13 +37,47 @@
   });
   </script>
 
+  <style>
+    @media (min-width: 1200px) {
+        #author-container {
+            min-width: 1200px;
+        }
+    }
+  </style>
+
+  <script>
+    const videos = document.querySelectorAll('video');
+
+    videos.forEach(video => {
+      video.addEventListener('loadeddata', function () {
+        refreshControls();
+      });
+    });
+
+    function refreshControls() {
+      $('.zoom-container').each(function() {
+          const containerElement = $(this);
+          const zoomWidget = new ZoomWidget(containerElement);
+      });
+
+      $('.video-comparison').each(function () {
+          const containerElement = $(this);
+          const comparisonWidget = new VideoComparison(containerElement);
+      });
+
+      $('.tabs-widget').each(function() {
+          const containerElement = $(this);
+          const tabsWidget = new TabsWidget(containerElement);
+      });
+    }
+  </script>
 </head>
 
 <body>
 
   <section class="hero">
-    <div class="hero-body" style="padding-bottom: 0;">>
-      <div class="container is-max-desktop" style="min-width: 1200px;">
+    <div class="hero-body" style="padding-bottom: 0;">
+      <div class="container is-max-desktop" id="author-container">
         <div class="columns is-centered">
           <div class="column has-text-centered">
 
