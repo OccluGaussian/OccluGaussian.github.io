@@ -81,7 +81,18 @@
                         firstItem.click();
                     }
                 });
-            }, 2000);
+            }, 1000);
+
+            setTimeout(function () {
+                // const ul = document.getElementById('myList');
+                const uls = document.querySelectorAll('ul');
+                uls.forEach(ul => {
+                  const firstItem = ul.firstElementChild;
+                    if (firstItem) {
+                        firstItem.click();
+                    }
+                });
+            }, 5000);
         };
   </script>
 </head>
