@@ -66,91 +66,56 @@
   </style>
 
   <script>
-    const videos = document.querySelectorAll('video');
-
-    videos.forEach(video => {
-      video.addEventListener('loadeddata', function () {
-        refreshControls();
-      });
-    });
-
-    function refreshControls() {
-      $('.zoom-container').each(function() {
-          const containerElement = $(this);
-          const zoomWidget = new ZoomWidget(containerElement);
-      });
-
-      $('.video-comparison').each(function () {
-          const containerElement = $(this);
-          const comparisonWidget = new VideoComparison(containerElement);
-      });
-
-      $('.tabs-widget').each(function() {
-          const containerElement = $(this);
-          const tabsWidget = new TabsWidget(containerElement);
-      });
-    }
 
     window.onload = function () {
-            setTimeout(function () {
-                // const ul = document.getElementById('myList');
-                const uls = document.querySelectorAll('ul');
-                uls.forEach(ul => {
-                  const firstItem = ul.firstElementChild;
-                    if (firstItem) {
-                        firstItem.click();
-                    }
-                });
-            }, 1000);
 
-            setTimeout(function () {
-                // const ul = document.getElementById('myList');
-                const uls = document.querySelectorAll('ul');
-                uls.forEach(ul => {
-                  const firstItem = ul.firstElementChild;
-                    if (firstItem) {
-                        firstItem.click();
-                    }
-                });
-            }, 5000);
+      const videos = document.querySelectorAll('video');
 
-            const mainButton = document.getElementById('data-button');
-            const subButtons = document.getElementById('sub-buttons');
-            const buffer = 10;
+      videos.forEach(video => {
+        video.addEventListener('loadeddata', function () {
+          refreshControls();
+        });
+      });
 
-            mainButton.addEventListener('click', function () {
-                if (subButtons.style.display === 'block') {
-                    subButtons.style.display = 'none';
-                } else {
-                    subButtons.style.display = 'block';
-                }
-            });
+      function refreshControls() {
+        $('.zoom-container').each(function() {
+            const containerElement = $(this);
+            const zoomWidget = new ZoomWidget(containerElement);
+        });
 
-            document.addEventListener('mousemove', (e) => {
-                const mainRect = mainButton.getBoundingClientRect();
-                const subRect = subButtons.getBoundingClientRect();
+        $('.video-comparison').each(function () {
+            const containerElement = $(this);
+            const comparisonWidget = new VideoComparison(containerElement);
+        });
 
-                const isNearMainButton =
-                    e.clientX >= mainRect.left &&
-                    e.clientX <= mainRect.right &&
-                    e.clientY >= mainRect.top &&
-                    e.clientY <= mainRect.bottom + buffer;
+        $('.tabs-widget').each(function() {
+            const containerElement = $(this);
+            const tabsWidget = new TabsWidget(containerElement);
+        });
+      }
 
-                const isOnSubButtons =
-                    e.clientX >= subRect.left &&
-                    e.clientX <= subRect.right &&
-                    e.clientY >= subRect.top &&
-                    e.clientY <= subRect.bottom;
+      setTimeout(function () {
+          // const ul = document.getElementById('myList');
+          const uls = document.querySelectorAll('ul');
+          uls.forEach(ul => {
+            const firstItem = ul.firstElementChild;
+              if (firstItem) {
+                  firstItem.click();
+              }
+          });
+      }, 1000);
 
-                if (isNearMainButton || isOnSubButtons) {
-                    subButtons.style.display = 'block';
-                    mainButton.style.borderRadius = 0
-                } else if (!isNearMainButton && !isOnSubButtons) {
-                    subButtons.style.display = 'none';
-                    mainButton.style.borderRadius = '290486px'
-                }
-            });
-  };
+      setTimeout(function () {
+          // const ul = document.getElementById('myList');
+          const uls = document.querySelectorAll('ul');
+          uls.forEach(ul => {
+            const firstItem = ul.firstElementChild;
+              if (firstItem) {
+                  firstItem.click();
+              }
+          });
+      }, 5000);
+    };
   </script>
 </head>
 
@@ -529,6 +494,44 @@
     </div>
   </footer>
       
+<script>
+    const mainButton = document.getElementById('data-button');
+    const subButtons = document.getElementById('sub-buttons');
+    const buffer = 10;
+
+    mainButton.addEventListener('click', function () {
+        if (subButtons.style.display === 'block') {
+            subButtons.style.display = 'none';
+        } else {
+            subButtons.style.display = 'block';
+        }
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        const mainRect = mainButton.getBoundingClientRect();
+        const subRect = subButtons.getBoundingClientRect();
+
+        const isNearMainButton =
+            e.clientX >= mainRect.left &&
+            e.clientX <= mainRect.right &&
+            e.clientY >= mainRect.top &&
+            e.clientY <= mainRect.bottom + buffer;
+
+        const isOnSubButtons =
+            e.clientX >= subRect.left &&
+            e.clientX <= subRect.right &&
+            e.clientY >= subRect.top &&
+            e.clientY <= subRect.bottom;
+
+        if (isNearMainButton || isOnSubButtons) {
+            subButtons.style.display = 'block';
+            mainButton.style.borderRadius = 0
+        } else if (!isNearMainButton && !isOnSubButtons) {
+            subButtons.style.display = 'none';
+            mainButton.style.borderRadius = '290486px'
+        }
+    });
+</script>
       
 </body>
 
